@@ -1,6 +1,14 @@
 Thefacebook::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "users/registrations"}
+
+  devise_scope :user do
+    get '/register' => 'devise/registrations#new'
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
+
   resources :statuses
+  get 'feed' => 'statuses#index'
   root to: 'statuses#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
