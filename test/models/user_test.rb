@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   	test "a user should enter a first name" do
   		user = User.new
   		assert !user.save
@@ -45,4 +42,11 @@ class UserTest < ActiveSupport::TestCase
 		assert user.valid?
 	end
 
+  test "a user can have a correctly formatted profile name" do
+    user = User.new(first_name: 'Shaun', last_name: 'Koo', email: 'shaunktw4@gmail.com')
+    user.password = user.password_confirmation ='asdfasdf'
+
+    user.profile_name = 'shaunktw2'
+    assert user.valid?
+  end
 end
