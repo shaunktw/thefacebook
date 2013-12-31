@@ -3,4 +3,9 @@ shaun:
    last_name: "Koo"
    email: "shaunktw@gmail.com"
    profile_name: "shaunkoo"
-   
+
+aniket:
+   first_name: "Aniket"
+   last_name: "Sharma"
+   email: "aniket@gmail.com"
+   profile_name: "aniket"
