@@ -1,4 +1,5 @@
 Thefacebook::Application.routes.draw do
+  get "profiles/show"
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 
   devise_scope :user do
