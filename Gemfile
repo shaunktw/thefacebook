@@ -9,11 +9,7 @@ gem 'rb-readline', '~> 0.4.2'
 gem 'simple_form'
 
 group :development, :test do
-	gem 'sqlite3', :require => "sqlite3"
-end
-
-group :production, :staging do
-  gem "pg"
+  gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
 end
 
 # Use SCSS for stylesheets
