@@ -8,7 +8,14 @@ gem 'devise'
 gem 'rb-readline', '~> 0.4.2'
 gem 'simple_form'
 
-gem 'sqlite3', group: [:development, :test]
+group :development, :test do
+	gem 'sqlite3'
+end
+
+group :production, :staging do
+  gem "pg"
+end
+
 
 
 # Use SCSS for stylesheets
