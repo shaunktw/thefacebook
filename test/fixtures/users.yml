@@ -9,3 +9,9 @@ aniket:
    last_name: "Sharma"
    email: "aniket@gmail.com"
    profile_name: "aniket"
+
+mike:
+    first_name: "Mike"
+    last_name: "Long"
+    email: "mike@hotmail.com"
+    profile_name: "mikey"

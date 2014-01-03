@@ -8,8 +8,12 @@ gem 'devise'
 gem 'rb-readline', '~> 0.4.2'
 gem 'simple_form'
 
-group :development, :test do
+group :development do
 	gem 'sqlite3'
+end
+
+group :test do
+	gem 'shoulda'
 end
 
 group :production, :staging do
