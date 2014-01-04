@@ -7,6 +7,7 @@ gem 'rails', '4.0.2'
 gem 'devise'
 gem 'rb-readline', '~> 0.4.2'
 gem 'simple_form'
+gem 'state_machine'
 
 group :development do
 	gem 'sqlite3'

@@ -3,6 +3,7 @@ shaun:
    last_name: "Koo"
    email: "shaunktw@gmail.com"
    profile_name: "shaunkoo"
+   encrypted_password: "$2a$10$Fh/Hm8RxDsuPTeBUr6864.GARlcmt7zF2WspaXGr3BIv2C27N.osq"
 
 aniket:
    first_name: "Aniket"

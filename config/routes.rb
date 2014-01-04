@@ -1,18 +1,28 @@
 Thefacebook::Application.routes.draw do
   get "profiles/show"
-  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  devise_for :users, :controllers => {:registrations => "users/registrations"}, :skip => [:sessions]
 
-  devise_scope :user do
-    get '/register' => 'devise/registrations#new'
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
+  as :user do
+    get '/register' => 'devise/registrations#new', as: :register
+    get '/login' => 'devise/sessions#new', as: :login
+    get '/logout' => 'devise/sessions#destroy', as: :logout
   end
 
+
+  as :user do
+    get '/login' => 'devise/sessions#new', as: :new_user_session
+    post '/login' => 'devise/sessions#create', as: :user_session
+    delete '/logout' => 'devise/sessions#destroy', as: :destroy_user_session
+  end
+
+
+
+  resources :user_friendship, as: 'user_friendships'
   resources :statuses
-  get 'feed' => 'statuses#index'
+  get 'feed' => 'statuses#index', as: :feed
   root to: 'statuses#index'
 
-  get '/:id', to: 'profiles#show'
+  get '/:id', to: 'profiles#show', as: 'profile'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

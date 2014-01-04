@@ -66,4 +66,9 @@ end
     assert users(:shaun).friends.include?(users(:mike))
   end
 
+  test "that calling to_param on a user returns the profile_name" do
+    assert_equal "shaunkoo", users(:shaun).to_param
+  end
+
+
 end
