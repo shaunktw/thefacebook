@@ -17,7 +17,14 @@ Thefacebook::Application.routes.draw do
 
 
 
-  resources :user_friendship, as: 'user_friendships'
+  resources :user_friendship, as: 'user_friendships' do
+    member do
+      put :accept
+    end
+  end
+
+
+
   resources :statuses
   get 'feed' => 'statuses#index', as: :feed
   root to: 'statuses#index'

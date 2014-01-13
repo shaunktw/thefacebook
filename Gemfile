@@ -8,6 +8,8 @@ gem 'devise'
 gem 'rb-readline', '~> 0.4.2'
 gem 'simple_form'
 gem 'state_machine'
+gem 'draper'
+gem 'js-routes'
 
 group :development do
 	gem 'sqlite3'
@@ -15,6 +17,7 @@ end
 
 group :test do
 	gem 'shoulda'
+	gem 'factory_girl_rails'
 end
 
 group :production, :staging do
