@@ -211,7 +211,7 @@ context "#edit" do
 		setup do
 			@user_friendship = create(:pending_user_friendship, user: users(:shaun))
 			sign_in users(:shaun)
-			get :edit, id: @user_friendship
+			get :edit, id: @user_friendship.friend.profile_name
 		end
 
 		should "get edit page and return success" do
