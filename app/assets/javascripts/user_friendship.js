@@ -1,3 +1,11 @@
+window.userFriendships = [];
+
+$(document).ready(function() {
+	$.ajax ({
+		url: Routes.user_frienships_path
+	})
+}
+
 $(document).ready(function) {
 
 	$('#add-frienship').click(function(event) {
